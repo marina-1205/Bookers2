@@ -1,11 +1,14 @@
-<div>
+<div class="container">
+  <div class="row"> 
+  
+<div class="col-md-3">
   <%= flash[:notice] %>
+<%= render 'books/list', book: @book, user: @user %>
 </div>
 
-<%= render 'books/list', book: @book, user: @user %>
-
+ <div class="col-md-8 offset-md-1">
 <h1>Books</h1>
- <table>
+ <table class="table table-striped">
   <thead>
     <tr>
       <th></th>
@@ -16,7 +19,7 @@
 <tbody>
   <% @books.each do |book| %>
     <tr>
-      <td><%= link_to book_path(book.id) do %>
+      <td><%= link_to user_path(book.user.id) do %>
           <%= image_tag book.user.get_profile_image(100,100) %>
           <% end %><br>
      <%= book.user.name %></td>
@@ -25,3 +28,6 @@
  <% end %>
   </tbody>
   </table>
+ </div>
+  </div>
+  </div>

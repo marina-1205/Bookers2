@@ -1,8 +1,13 @@
-
-<%= render 'books/list', book: @book, user: current_user %>
+<div class="container">
+  <div class="row"> 
+  
+<div class="col-md-3">
+  <%= flash[:notice] %>
+  <%= render 'books/list', book: @book, user: current_user %>
+</div>
+<div class="col-md-8 offset-md-1">
 <h1>Users</h1>
-
-  <table>
+  <table class="table table-striped">
   <thead>
     <tr>
       <th>image</th>
@@ -24,3 +29,6 @@
   <% end %>
   </tbody>
   </table>
+</div>
+</div>
+</div>
